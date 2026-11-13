@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meridian Build — Bespoke Luxury Construction</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+
+    <!-- Nav -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav__logo">MERIDIAN</a>
+        <div class="nav__links">
+            <a href="#philosophy">Philosophy</a>
+            <a href="#projects">Projects</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="nav__cta">Let's Talk</a>
+        <button class="nav__burger" id="burger" aria-label="Open menu">
+            <span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#philosophy" class="mobile-menu__link">Philosophy</a>
+        <a href="#projects" class="mobile-menu__link">Projects</a>
+        <a href="#process" class="mobile-menu__link">Process</a>
+        <a href="#contact" class="mobile-menu__link">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero__media">
+            <div class="hero__slide hero__slide--active"
+                style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85')">
+            </div>
+            <div class="hero__slide"
+                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85')">
+            </div>
+            <div class="hero__slide"
+                style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=85')">
+            </div>
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="hero__content">
+            <div class="hero__meta">
+                <span>Est. 2004</span>
+                <span class="hero__meta-div">—</span>
+                <span>Montreal, Canada</span>
+            </div>
+            <h1 class="hero__headline">
+                A Meridian home is more<br>than a structure.
+                <em>It's shaped<br>around you.</em>
+            </h1>
+            <a href="#projects" class="hero__scroll-cta">
+                <span>View Projects</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <polyline points="19 12 12 19 5 12" />
+                </svg>
+            </a>
+        </div>
+        <div class="hero__corner hero__corner--tl">Est. 1990</div>
+        <div class="hero__corner hero__corner--tr">Montreal</div>
+        <div class="hero__tags">
+            <div class="hero__tag-track" id="hero-tag-track">
+                <span>Bespoke</span>
+                <span aria-hidden="true">·</span>
+                <span>Luxury</span>
+                <span aria-hidden="true">·</span>
+                <span>Bespoke</span>
+                <span aria-hidden="true">·</span>
+                <span>Luxury</span>
+                <span aria-hidden="true">·</span>
+                <span>Bespoke</span>
+                <span aria-hidden="true">·</span>
+                <span>Luxury</span>
+                <span aria-hidden="true">·</span>
+            </div>
+        </div>
+        <div class="hero__counter">
+            <span id="slide-current">01</span>
+            <span class="hero__counter-line"></span>
+            <span>03</span>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy" id="philosophy">
+        <div class="philosophy__inner">
+            <div class="philosophy__left">
+                <div class="section-eyebrow">Philosophy</div>
+                <h2 class="philosophy__headline" data-reveal>Our guiding<br>values</h2>
+            </div>
+            <div class="philosophy__right">
+                <p class="philosophy__body" data-reveal>
+                    Our homes go beyond construction. They are measured responses to how our clients live — refined,
+                    comfortable, and unmistakably personal. Through true collaboration, we align precision and
+                    personality, craftsmanship with care.
+                </p>
+                <p class="philosophy__body" data-reveal>
+                    Complexity inspires us. Each project is a chance to explore, refine, and build with intent. These
+                    are homes that carry quiet confidence — expressive without excess, defined by lasting quality.
+                </p>
+                <a href="#contact" class="text-link" data-reveal>Begin a conversation →</a>
+            </div>
+        </div>
+        <div class="philosophy__image" data-reveal>
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85"
+                alt="Meridian luxury interior" loading="lazy" />
+            <div class="philosophy__caption">Interior — Project Aria, 2024</div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+        <div class="stat">
+            <span class="stat__num" data-count="20">20+</span>
+            <span class="stat__label">Years building</span>
+        </div>
+        <div class="stat__div"></div>
+        <div class="stat">
+            <span class="stat__num" data-count="84">84</span>
+            <span class="stat__label">Homes completed</span>
+        </div>
+        <div class="stat__div"></div>
+        <div class="stat">
+            <span class="stat__num">12</span>
+            <span class="stat__label">Industry awards</span>
+        </div>
+        <div class="stat__div"></div>
+        <div class="stat">
+            <span class="stat__num">100%</span>
+            <span class="stat__label">Client retention</span>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <section class="projects" id="projects">
+        <div class="projects__header">
+            <div class="projects__header-left">
+                <div class="section-eyebrow">Featured Projects</div>
+                <h2 class="projects__headline" data-reveal>Go beyond<br>bricks &amp; mortar</h2>
+            </div>
+            <div class="projects__header-right" data-reveal>
+                <p>Our projects are the result of trust, close collaboration, and an uncompromising approach to quality.
+                    We undertake a limited number of projects at any one time, ensuring each home receives the focus it
+                    deserves.</p>
+                <a href="#contact" class="text-link">See all projects →</a>
+            </div>
+        </div>
+        <div class="projects__strip">
+            <button class="project-card" type="button" data-project="aria" data-reveal aria-label="Open Project Aria">
+                <div class="project-card__image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                        alt="Project Aria" loading="lazy" />
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__name">Aria</span>
+                    <span class="project-card__year">2025</span>
+                </div>
+                <p class="project-card__desc">Custom luxury residence — Rosedale, Montreal</p>
+            </button>
+            <button class="project-card" type="button" data-project="obsidian" data-reveal aria-label="Open Project Obsidian">
+                <div class="project-card__image">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=85"
+                        alt="Project Obsidian" loading="lazy" />
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__name">Obsidian</span>
+                    <span class="project-card__year">2024</span>
+                </div>
+                <p class="project-card__desc">Bespoke family home — Forest Hill, Montreal</p>
+            </button>
+            <button class="project-card" type="button" data-project="calibre" data-reveal aria-label="Open Project Calibre">
+                <div class="project-card__image">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85"
+                        alt="Project Calibre" loading="lazy" />
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__name">Calibre</span>
+                    <span class="project-card__year">2023</span>
+                </div>
+                <p class="project-card__desc">Architect-led renovation — The Annex, Montreal</p>
+            </button>
+            <button class="project-card" type="button" data-project="pinnacle" data-reveal aria-label="Open Project Pinnacle">
+                <div class="project-card__image">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85"
+                        alt="Project Pinnacle" loading="lazy" />
+                </div>
+                <div class="project-card__info">
+                    <span class="project-card__name">Pinnacle</span>
+                    <span class="project-card__year">2022</span>
+                </div>
+                <p class="project-card__desc">New build luxury home — Bridle Path, Montreal</p>
+            </button>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal__backdrop" data-close-project></div>
+        <article class="project-modal__panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button class="project-modal__close" type="button" data-close-project aria-label="Close project">×</button>
+            <div class="project-modal__media">
+                <img id="project-modal-image" src="" alt="" />
+            </div>
+            <div class="project-modal__content">
+                <div class="project-modal__eyebrow" id="project-modal-meta"></div>
+                <h2 class="project-modal__title" id="project-modal-title"></h2>
+                <p class="project-modal__intro" id="project-modal-intro"></p>
+                <div class="project-modal__facts" id="project-modal-facts"></div>
+                <div class="project-modal__body" id="project-modal-body"></div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Collaborators -->
+    <section class="collaborators">
+        <div class="collaborators__inner">
+            <div class="collaborators__left">
+                <div class="section-eyebrow">Our Collaborators</div>
+                <p data-reveal>Meridian partners with leading architects and designers to realise ideas with integrity
+                    and precision. Our relationships are built on trust, detail, and shared respect for design.</p>
+            </div>
+            <div class="collaborators__list">
+                <div class="collaborator" data-reveal>
+                    <span class="collaborator__name">Shim-Sutcliffe Architects</span>
+                    <span class="collaborator__role">Award-winning architecture</span>
+                </div>
+                <div class="collaborator" data-reveal>
+                    <span class="collaborator__name">Tableaux Interior Design</span>
+                    <span class="collaborator__role">Luxury interiors</span>
+                </div>
+                <div class="collaborator" data-reveal>
+                    <span class="collaborator__name">Watermark Fixtures</span>
+                    <span class="collaborator__role">Premium tapware</span>
+                </div>
+                <div class="collaborator" data-reveal>
+                    <span class="collaborator__name">Sub-Zero Wolf</span>
+                    <span class="collaborator__role">Premium appliances</span>
+                </div>
+                <div class="collaborator" data-reveal>
+                    <span class="collaborator__name">Centra Windows</span>
+                    <span class="collaborator__role">Bespoke windows &amp; doors</span>
+                </div>
+            </div>
+        </div>
+        <div class="collaborators__gallery">
+            <div class="collab-img collab-img--1" data-reveal>
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=85"
+                    alt="Kitchen detail" loading="lazy" />
+            </div>
+            <div class="collab-img collab-img--2" data-reveal>
+                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=900&q=85"
+                    alt="Living room" loading="lazy" />
+            </div>
+            <div class="collab-img collab-img--3" data-reveal>
+                <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=900&q=85"
+                    alt="Bathroom" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+        <div class="testimonial__inner">
+            <div class="testimonial__text" data-reveal>
+                <div class="section-eyebrow">Client Stories</div>
+                <blockquote class="testimonial__quote">
+                    "Meridian is the most genuine, trustworthy builder — they construct the most intricate structures
+                    with ease, and work tirelessly to make your dreams come to life."
+                </blockquote>
+                <cite class="testimonial__cite">Michael &amp; Kathryn — Project Aria</cite>
+                <div class="testimonial__nav">
+                    <button class="testimonial__btn" id="prev-testimonial" aria-label="Previous">←</button>
+                    <button class="testimonial__btn" id="next-testimonial" aria-label="Next">→</button>
+                </div>
+            </div>
+            <div class="testimonial__image" data-reveal>
+                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=85"
+                    alt="Project Aria exterior" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="process__header">
+            <div class="section-eyebrow">How We Work</div>
+            <h2 class="process__headline" data-reveal>A considered<br>process</h2>
+        </div>
+        <div class="process__steps">
+            <div class="process__step" data-reveal>
+                <span class="process__num">01</span>
+                <h3 class="process__title">Discovery</h3>
+                <p class="process__body">We begin by listening. Understanding how you live, what matters to you, and
+                    what you've always imagined. Every conversation shapes what follows.</p>
+            </div>
+            <div class="process__step" data-reveal>
+                <span class="process__num">02</span>
+                <h3 class="process__title">Design &amp; Planning</h3>
+                <p class="process__body">Working alongside your architect and our team, we translate your vision into
+                    buildable reality. Budgets, timelines, and specifications aligned before ground breaks.</p>
+            </div>
+            <div class="process__step" data-reveal>
+                <span class="process__num">03</span>
+                <h3 class="process__title">Construction</h3>
+                <p class="process__body">Our experienced site teams build with care, craft, and consistent
+                    communication. You're kept informed throughout — no surprises, only progress.</p>
+            </div>
+            <div class="process__step" data-reveal>
+                <span class="process__num">04</span>
+                <h3 class="process__title">Handover</h3>
+                <p class="process__body">Your home is delivered to the standard we've promised. We walk you through
+                    every detail, and remain available long after the keys change hands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section class="awards">
+        <div class="awards__inner">
+            <div class="section-eyebrow">Recognition</div>
+            <div class="awards__grid">
+                <div class="award" data-reveal>
+                    <span class="award__year">'24</span>
+                    <span class="award__org">National Architecture Awards</span>
+                    <span class="award__title">Residential Custom Builder of the Year</span>
+                </div>
+                <div class="award" data-reveal>
+                    <span class="award__year">'23</span>
+                    <span class="award__org">Montreal Design Awards</span>
+                    <span class="award__title">Gold — Custom Home ($3M–$5M)</span>
+                </div>
+                <div class="award" data-reveal>
+                    <span class="award__year">'22</span>
+                    <span class="award__org">HBA Ontario</span>
+                    <span class="award__title">Winner — Renovated Kitchen</span>
+                </div>
+                <div class="award" data-reveal>
+                    <span class="award__year">'21</span>
+                    <span class="award__org">HBA Ontario</span>
+                    <span class="award__title">Winner — Custom Home Under $3M</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact__inner">
+            <div class="contact__left">
+                <div class="section-eyebrow">Get in Touch</div>
+                <h2 class="contact__headline" data-reveal>Begin your<br>project</h2>
+                <p class="contact__body" data-reveal>Every Meridian home starts with a conversation. Tell us about your
+                    vision and we'll be in touch within two business days.</p>
+                <div class="contact__details" data-reveal>
+                    <a href="tel:+14165550192" class="contact__detail">+1 (416) 555-0192</a>
+                    <a href="mailto:hello@meridianbuild.ca" class="contact__detail">hello@meridianbuild.ca</a>
+                    <span class="contact__detail">Montreal, Quebec</span>
+                </div>
+            </div>
+            <div class="contact__right" data-reveal>
+                <form class="contact__form" id="contact-form">
+                    <div class="field">
+                        <label for="c-name">Full Name</label>
+                        <input type="text" id="c-name" name="name" placeholder="Your name" />
+                    </div>
+                    <div class="field">
+                        <label for="c-email">Email</label>
+                        <input type="email" id="c-email" name="email" placeholder="you@email.com" />
+                    </div>
+                    <div class="field">
+                        <label for="c-project">Project Type</label>
+                        <select id="c-project" name="project">
+                            <option value="">Select a type</option>
+                            <option>New Custom Home</option>
+                            <option>Luxury Renovation</option>
+                            <option>Architect Collaboration</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="c-message">Tell us about your project</label>
+                        <textarea id="c-message" name="message" rows="4"
+                            placeholder="Location, scope, timeline, budget range..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <a href="#hero" class="footer__logo">MERIDIAN</a>
+            <nav class="footer__nav">
+                <a href="#philosophy">Philosophy</a>
+                <a href="#projects">Projects</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer__social">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span>© 2025 Meridian Build. All rights reserved.</span>
+            <span class="footer__sub">Bespoke Luxury Construction — Montreal</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
