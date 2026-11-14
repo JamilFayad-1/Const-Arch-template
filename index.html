@@ -5,7 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meridian Build — Bespoke Luxury Construction</title>
+    <meta name="description" content="Explore Meridian Build’s luxury construction demo: custom homes, architect-led renovations, featured projects, and a considered design-to-handover process." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meridian Build — Bespoke Luxury Construction" />
+    <meta property="og:description" content="Custom homes, architecture, and luxury renovation — explore the Meridian Build template demo." />
+    <meta property="og:site_name" content="Meridian Build" />
+    <meta name="twitter:card" content="summary" />
+    <!-- Set canonical, og:url and absolute og:image/twitter:image URLs after choosing the demo domain. -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebPage","name":"Meridian Build — Bespoke Luxury Construction","description":"A demonstration website for custom home construction, architecture studios, and luxury renovation.","inLanguage":"en","about":[{"@type":"Thing","name":"Custom home construction"},{"@type":"Thing","name":"Architect-led renovation"}]}
+    </script>
     <link rel="stylesheet" href="style.css" />
+    <noscript><style>[data-reveal] { opacity: 1; transform: none; } .project-card__desc { opacity: 1; transform: none; }</style></noscript>
 </head>
 
 <body>
@@ -14,7 +26,7 @@
     <div class="cursor" id="cursor"></div>
 
     <!-- Nav -->
-    <nav class="nav" id="nav">
+    <nav class="nav" id="nav" aria-label="Main navigation">
         <a href="#hero" class="nav__logo">MERIDIAN</a>
         <div class="nav__links">
             <a href="#philosophy">Philosophy</a>
@@ -23,30 +35,31 @@
             <a href="#contact">Contact</a>
         </div>
         <a href="#contact" class="nav__cta">Let's Talk</a>
-        <button class="nav__burger" id="burger" aria-label="Open menu">
+        <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span><span></span>
         </button>
     </nav>
 
     <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu" id="mobile-menu" inert aria-hidden="true">
         <a href="#philosophy" class="mobile-menu__link">Philosophy</a>
         <a href="#projects" class="mobile-menu__link">Projects</a>
         <a href="#process" class="mobile-menu__link">Process</a>
         <a href="#contact" class="mobile-menu__link">Contact</a>
     </div>
 
+    <main id="main-content">
     <!-- Hero -->
     <section class="hero" id="hero">
         <div class="hero__media">
-            <div class="hero__slide hero__slide--active"
-                style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=85')">
+            <div class="hero__slide hero__slide--active">
+                <img src="assets/images/hero-residence-2400.webp" width="2400" height="1592" srcset="assets/images/hero-residence-640.webp 640w, assets/images/hero-residence-960.webp 960w, assets/images/hero-residence-1600.webp 1600w, assets/images/hero-residence-2400.webp 2400w" sizes="max(100vw, 150svh)" alt="" decoding="async" fetchpriority="high" />
             </div>
-            <div class="hero__slide"
-                style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=85')">
+            <div class="hero__slide">
+                <img src="assets/images/hero-interior-2400.webp" width="2400" height="1632" srcset="assets/images/hero-interior-640.webp 640w, assets/images/hero-interior-960.webp 960w, assets/images/hero-interior-1600.webp 1600w, assets/images/hero-interior-2400.webp 2400w" sizes="max(100vw, 150svh)" alt="" decoding="async" loading="lazy" />
             </div>
-            <div class="hero__slide"
-                style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=85')">
+            <div class="hero__slide">
+                <img src="assets/images/hero-villa-2400.webp" width="2400" height="1600" srcset="assets/images/hero-villa-640.webp 640w, assets/images/hero-villa-960.webp 960w, assets/images/hero-villa-1600.webp 1600w, assets/images/hero-villa-2400.webp 2400w" sizes="max(100vw, 150svh)" alt="" decoding="async" loading="lazy" />
             </div>
             <div class="hero__overlay"></div>
         </div>
@@ -114,7 +127,7 @@
             </div>
         </div>
         <div class="philosophy__image" data-reveal>
-            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85"
+            <img src="assets/images/aria-interior-1800.webp" width="1800" height="1200" srcset="assets/images/aria-interior-640.webp 640w, assets/images/aria-interior-960.webp 960w, assets/images/aria-interior-1800.webp 1800w" sizes="100vw" decoding="async"
                 alt="Meridian luxury interior" loading="lazy" />
             <div class="philosophy__caption">Interior — Project Aria, 2024</div>
         </div>
@@ -160,7 +173,7 @@
         <div class="projects__strip">
             <button class="project-card" type="button" data-project="aria" data-reveal aria-label="Open Project Aria">
                 <div class="project-card__image">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                    <img src="assets/images/project-aria-1600.webp" width="1600" height="1067" srcset="assets/images/project-aria-640.webp 640w, assets/images/project-aria-960.webp 960w, assets/images/project-aria-1600.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw" decoding="async"
                         alt="Project Aria" loading="lazy" />
                 </div>
                 <div class="project-card__info">
@@ -171,7 +184,7 @@
             </button>
             <button class="project-card" type="button" data-project="obsidian" data-reveal aria-label="Open Project Obsidian">
                 <div class="project-card__image">
-                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=85"
+                    <img src="assets/images/project-obsidian-1600.webp" width="1600" height="1067" srcset="assets/images/project-obsidian-640.webp 640w, assets/images/project-obsidian-960.webp 960w, assets/images/project-obsidian-1600.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw" decoding="async"
                         alt="Project Obsidian" loading="lazy" />
                 </div>
                 <div class="project-card__info">
@@ -182,7 +195,7 @@
             </button>
             <button class="project-card" type="button" data-project="calibre" data-reveal aria-label="Open Project Calibre">
                 <div class="project-card__image">
-                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85"
+                    <img src="assets/images/project-calibre-1600.webp" width="1600" height="1067" srcset="assets/images/project-calibre-640.webp 640w, assets/images/project-calibre-960.webp 960w, assets/images/project-calibre-1600.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw" decoding="async"
                         alt="Project Calibre" loading="lazy" />
                 </div>
                 <div class="project-card__info">
@@ -193,7 +206,7 @@
             </button>
             <button class="project-card" type="button" data-project="pinnacle" data-reveal aria-label="Open Project Pinnacle">
                 <div class="project-card__image">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=85"
+                    <img src="assets/images/project-pinnacle-1600.webp" width="1600" height="1067" srcset="assets/images/project-pinnacle-640.webp 640w, assets/images/project-pinnacle-960.webp 960w, assets/images/project-pinnacle-1600.webp 1600w" sizes="(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 25vw" decoding="async"
                         alt="Project Pinnacle" loading="lazy" />
                 </div>
                 <div class="project-card__info">
@@ -206,12 +219,12 @@
     </section>
 
     <!-- Project Modal -->
-    <div class="project-modal" id="project-modal" aria-hidden="true">
+    <div class="project-modal" id="project-modal" aria-hidden="true" inert>
         <div class="project-modal__backdrop" data-close-project></div>
         <article class="project-modal__panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
             <button class="project-modal__close" type="button" data-close-project aria-label="Close project">×</button>
             <div class="project-modal__media">
-                <img id="project-modal-image" src="" alt="" />
+                <img id="project-modal-image" alt="" decoding="async" />
             </div>
             <div class="project-modal__content">
                 <div class="project-modal__eyebrow" id="project-modal-meta"></div>
@@ -256,15 +269,15 @@
         </div>
         <div class="collaborators__gallery">
             <div class="collab-img collab-img--1" data-reveal>
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=85"
+                <img src="assets/images/kitchen-detail-900.webp" width="900" height="600" srcset="assets/images/kitchen-detail-640.webp 640w, assets/images/kitchen-detail-900.webp 900w" sizes="(max-width: 900px) 100vw, 55vw" decoding="async"
                     alt="Kitchen detail" loading="lazy" />
             </div>
             <div class="collab-img collab-img--2" data-reveal>
-                <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=900&q=85"
+                <img src="assets/images/living-room-900.webp" width="900" height="600" srcset="assets/images/living-room-640.webp 640w, assets/images/living-room-900.webp 900w" sizes="(max-width: 900px) 100vw, 55vw" decoding="async"
                     alt="Living room" loading="lazy" />
             </div>
             <div class="collab-img collab-img--3" data-reveal>
-                <img src="https://images.unsplash.com/photo-1616137466211-f939a420be84?auto=format&fit=crop&w=900&q=85"
+                <img src="assets/images/bathroom-900.webp" width="900" height="506" srcset="assets/images/bathroom-640.webp 640w, assets/images/bathroom-900.webp 900w" sizes="(max-width: 900px) 100vw, 55vw" decoding="async"
                     alt="Bathroom" loading="lazy" />
             </div>
         </div>
@@ -286,7 +299,7 @@
                 </div>
             </div>
             <div class="testimonial__image" data-reveal>
-                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1000&q=85"
+                <img src="assets/images/aria-exterior-1000.webp" width="1000" height="839" srcset="assets/images/aria-exterior-640.webp 640w, assets/images/aria-exterior-960.webp 960w, assets/images/aria-exterior-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 55vw" decoding="async"
                     alt="Project Aria exterior" loading="lazy" />
             </div>
         </div>
@@ -373,11 +386,11 @@
                 <form class="contact__form" id="contact-form">
                     <div class="field">
                         <label for="c-name">Full Name</label>
-                        <input type="text" id="c-name" name="name" placeholder="Your name" />
+                        <input type="text" id="c-name" name="name" autocomplete="name" required placeholder="Your name" />
                     </div>
                     <div class="field">
                         <label for="c-email">Email</label>
-                        <input type="email" id="c-email" name="email" placeholder="you@email.com" />
+                        <input type="email" id="c-email" name="email" autocomplete="email" required placeholder="you@email.com" />
                     </div>
                     <div class="field">
                         <label for="c-project">Project Type</label>
@@ -400,11 +413,13 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__top">
             <a href="#hero" class="footer__logo">MERIDIAN</a>
-            <nav class="footer__nav">
+            <nav class="footer__nav" aria-label="Footer navigation">
                 <a href="#philosophy">Philosophy</a>
                 <a href="#projects">Projects</a>
                 <a href="#process">Process</a>
@@ -421,7 +436,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

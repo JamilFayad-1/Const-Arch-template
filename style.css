@@ -1572,3 +1572,20 @@ a.contact__detail:hover {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Behavior-only safeguards; preserve the original visual design. */
+body.menu-open { overflow: hidden; }
+@media (hover: none), (pointer: coarse) {
+    .cursor { display: none; }
+    body, a, button, input, select, textarea { cursor: auto !important; }
+}
+@media (max-width: 768px) {
+    .nav__burger { position: relative; }
+    .nav__burger::before { content: ''; position: absolute; inset: -16px -6px; }
+    .field input, .field select, .field textarea { font-size: 16px; }
+    .footer__nav { flex-wrap: wrap; gap: 20px 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-delay: 0ms !important; transition-delay: 0ms !important; }
+}

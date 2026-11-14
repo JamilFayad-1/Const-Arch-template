@@ -8,9 +8,10 @@
 /* ================================================
    CUSTOM CURSOR
    ================================================ */
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const cursor = document.getElementById('cursor');
 
-if (cursor) {
+if (cursor && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
@@ -49,12 +50,29 @@ const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
 
 if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
+    const setMenuOpen = (open) => {
+        mobileMenu.classList.toggle('open', open);
+        mobileMenu.inert = !open;
+        mobileMenu.setAttribute('aria-hidden', String(!open));
+        burger.setAttribute('aria-expanded', String(open));
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('menu-open', open);
+    };
+    burger.addEventListener('click', () => setMenuOpen(!mobileMenu.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+    document.addEventListener('keydown', (event) => {
+        if (!mobileMenu.classList.contains('open')) return;
+        if (event.key === 'Escape') { setMenuOpen(false); burger.focus(); }
+        if (event.key === 'Tab') {
+            const links = [...mobileMenu.querySelectorAll('a')];
+            const controls = [burger, ...links];
+            const index = controls.indexOf(document.activeElement);
+            event.preventDefault();
+            controls[(index + (event.shiftKey ? -1 : 1) + controls.length) % controls.length].focus();
+        }
     });
-
-    mobileMenu.querySelectorAll('.mobile-menu__link').forEach((link) => {
-        link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    window.matchMedia('(min-width: 769px)').addEventListener('change', event => {
+        if (event.matches) setMenuOpen(false);
     });
 }
 
@@ -76,10 +94,16 @@ function goToSlide(index) {
 }
 
 function startSlideshow() {
+    clearInterval(slideTimer);
+    if (document.hidden || reducedMotion.matches) return;
     slideTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
 }
 
-if (slides.length > 1) startSlideshow();
+if (slides.length > 1) {
+    startSlideshow();
+    document.addEventListener('visibilitychange', startSlideshow);
+    reducedMotion.addEventListener('change', startSlideshow);
+}
 
 /* ================================================
    SCROLL REVEAL
@@ -129,10 +153,12 @@ document.querySelectorAll('.project-card__desc').forEach((desc) => {
    ================================================ */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const id = anchor.getAttribute('href').slice(1);
+        if (!id) { e.preventDefault(); return; }
+        const target = document.getElementById(id);
         if (target) {
             e.preventDefault();
-            window.scrollTo({ top: target.offsetTop - 24, behavior: 'smooth' });
+            window.scrollTo({ top: target.offsetTop - 24, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
         }
     });
 });
@@ -148,7 +174,7 @@ const projectData = {
         type: 'Custom residence',
         scope: 'New luxury build',
         duration: '18 months',
-        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85',
+        image: 'assets/images/project-aria-1600.webp',
         intro: 'A composed family residence shaped around warm entertaining spaces, generous glazing, and a quiet relationship to the mature landscape.',
         body: [
             'The brief called for a home that could feel intimate day to day and expansive when hosting. Meridian coordinated the structure, envelope, millwork, and finish sequencing to preserve the calm architectural intent.',
@@ -166,7 +192,7 @@ const projectData = {
         type: 'Family home',
         scope: 'Interior-led bespoke build',
         duration: '14 months',
-        image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1600&q=85',
+        image: 'assets/images/project-obsidian-1600.webp',
         intro: 'A restrained, deeply comfortable home with a focus on natural light, private bedroom suites, and carefully resolved interior transitions.',
         body: [
             'Obsidian pairs subtle detailing with robust construction planning. The team worked closely with designers to align concealed services, custom millwork, and soft material junctions.',
@@ -184,7 +210,7 @@ const projectData = {
         type: 'Architect-led renovation',
         scope: 'Full home renewal',
         duration: '12 months',
-        image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85',
+        image: 'assets/images/project-calibre-1600.webp',
         intro: 'A precise renovation that opened the home to light, water, and indoor-outdoor living while respecting the original urban footprint.',
         body: [
             'Calibre required disciplined coordination between existing structure and new architectural gestures. Meridian managed the structural upgrades, glazing packages, and exterior finish tolerances.',
@@ -202,7 +228,7 @@ const projectData = {
         type: 'New build luxury home',
         scope: 'Custom construction',
         duration: '20 months',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=85',
+        image: 'assets/images/project-pinnacle-1600.webp',
         intro: 'A highly detailed custom build focused on craftsmanship, technical precision, and a polished handover experience.',
         body: [
             'From early planning through final installation, Pinnacle demanded careful trade coordination and consistent quality control. The project emphasized durable assemblies and refined finish execution.',
@@ -284,6 +310,7 @@ function openProjectModal(projectKey) {
     projectModalBody.innerHTML = project.body.map((paragraph) => `<p>${paragraph}</p>`).join('');
     animateProjectModalText();
 
+    projectModal.inert = false;
     projectModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
     requestAnimationFrame(() => {
@@ -298,6 +325,7 @@ function openProjectModal(projectKey) {
 function closeProjectModal() {
     if (!projectModal) return;
     projectModal.classList.remove('open', 'is-animating');
+    projectModal.inert = true;
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
     if (lastFocusedProject) lastFocusedProject.focus();
@@ -312,6 +340,10 @@ document.querySelectorAll('[data-close-project]').forEach((el) => {
 });
 
 document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab' && projectModal?.classList.contains('open')) {
+        e.preventDefault();
+        projectModal.querySelector('.project-modal__close').focus();
+    }
     if (e.key === 'Escape' && projectModal?.classList.contains('open')) {
         closeProjectModal();
     }
@@ -374,11 +406,11 @@ if (form) {
         e.preventDefault();
         const btn = form.querySelector('.submit-btn');
         const original = btn.textContent;
-        btn.textContent = 'Sending...';
+        btn.textContent = 'Previewing…';
         btn.disabled = true;
 
         setTimeout(() => {
-            btn.textContent = '✓ Enquiry Sent';
+            btn.textContent = 'Demo only — not sent';
             btn.style.background = '#3a3830';
             setTimeout(() => {
                 btn.textContent = original;
